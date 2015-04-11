@@ -37,7 +37,8 @@ gulp.task('scripts', function() {
   browserify('./example/example.js')
     .bundle()
     .pipe(source('example.min.js'))
-    .pipe(gulp.dest('example'));
+    .pipe(streamify(uglify()))
+    .pipe(gulp.dest('./example'));
 
   browserify('./lib/tweet-dom-creator.js')
     .bundle()
