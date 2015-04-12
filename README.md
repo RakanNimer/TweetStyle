@@ -1,7 +1,7 @@
 ### Description
 
 
-npm module to programmatically convert a tweet from JSON to styled HTML that can be used with node or on the browser.
+npm module to programmatically convert a tweet from JSON to styled HTML for the browser.
 
 ### Installation 
 
@@ -27,6 +27,8 @@ var tweetHTML = tweetDomCreator.createNode(tweet);
 //
 tweetDomCreator.appendToNode(tweet,'body');
 ```
+
+
 
 ### Example
 The example folder contains an example with a sample_tweet
