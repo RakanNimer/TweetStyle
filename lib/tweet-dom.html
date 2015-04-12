@@ -17,7 +17,7 @@
         <%= tweet.text %>
         <% if(tweet.entities !== undefined && tweet.entities.media !== undefined ){ %>
             <div class="tweet-image">
-                <img src="tweet.entities.media[0].media_url_https">
+                <img src="<%= tweet.entities.media[0].media_url_https %>">
             </div>
         <% } %>
     </div>

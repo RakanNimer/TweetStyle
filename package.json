@@ -1,5 +1,5 @@
 {
-  "name": "TweetStyler",
+  "name": "tweet-dom-creator",
   "description": "Convert JSON tweets to styled HTML",
   "main": "lib/tweet-dom-creator.js",
   "directories": {
