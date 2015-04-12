@@ -17,8 +17,8 @@ gulp.task('lint', function() {
     .pipe(jshint.reporter('default'));
 });
 
-// Compile Our Sass
-gulp.task('sass', function() {
+// Compile Our CSS
+gulp.task('css', function() {
 
   gulp.src('example/example.css')
     .pipe(sass())
@@ -55,4 +55,4 @@ gulp.task('watch', function() {
 });
 
 // Default Task
-gulp.task('default', ['lint', 'sass', 'scripts', 'watch']);
+gulp.task('build', ['lint', 'sass', 'scripts', 'watch']);
