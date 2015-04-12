@@ -1,5 +1,4 @@
-var gulp = require('gulp'); 
-
+var gulp = require('gulp');
 var source = require('vinyl-source-stream');
 var browserify = require('browserify');
 var jshint    = require('gulp-jshint');
@@ -9,6 +8,7 @@ var rename    = require('gulp-rename');
 var minifyCSS = require('gulp-minify-css');
 var fs = require('fs');
 var streamify = require('gulp-streamify');
+var stringify = require('stringify');
 
 // Lint Task
 gulp.task('lint', function() {
@@ -33,23 +33,24 @@ gulp.task('sass', function() {
 
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
-
-  browserify('./example/example.js')
-    .bundle()
-    .pipe(source('example.min.js'))
-    .pipe(streamify(uglify()))
-    .pipe(gulp.dest('./example'));
-
-  browserify('./lib/tweet-dom-creator.js')
+    browserify({entries:'./lib/tweet-dom-creator.js', debug:true})
+    .transform(stringify(['.html']))
     .bundle()
     .pipe(source('tweet-dom-creator.min.js'))
-    .pipe(streamify(uglify()))
-    .pipe(gulp.dest('lib'));
+    .pipe(gulp.dest('./lib/'));
+  
+
+     browserify({entries:'./example/example.js', debug: true})
+    .transform(stringify(['.html']))
+    .bundle()
+    .pipe(source('example.min.js'))
+    .pipe(gulp.dest('./example/'));
 });
 
 // Watch Files For Changes
 gulp.task('watch', function() {
-  gulp.watch('lib/*.js', ['lint', 'scripts']);
+  gulp.watch('example/*', ['lint', 'scripts']);
+  gulp.watch('lib/*', ['lint', 'scripts']);
   gulp.watch(['lib/*.scss', 'lib/*.css'], ['sass']);
 });
 
