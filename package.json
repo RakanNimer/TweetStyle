@@ -2,7 +2,7 @@
   "name": "tweet-dom-creator",
   "description": "Convert JSON tweets to styled HTML",
   "main": "lib/tweet-dom-creator.js",
-  "version":"0.0.2",
+  "version":"0.0.3",
   "directories": {
     "example": "example"
   },
