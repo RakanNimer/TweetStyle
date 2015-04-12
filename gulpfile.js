@@ -12,7 +12,7 @@ var stringify = require('stringify');
 
 // Lint Task
 gulp.task('lint', function() {
-  return gulp.src('lib/sweet-alert.js')
+  return gulp.src('lib/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });

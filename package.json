@@ -2,12 +2,13 @@
   "name": "tweet-dom-creator",
   "description": "Convert JSON tweets to styled HTML",
   "main": "lib/tweet-dom-creator.js",
+  "version":"0.0.1",
   "directories": {
     "example": "example"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/RakanNimer/TweetStyle"
+    "url": "https://github.com/RakanNimer/tweet-dom-creator"
   },
   "keywords": [
     "Tweet",
@@ -16,9 +17,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "hhttps://github.com/RakanNimer/TweetStyle/issues"
+    "url": "hhttps://github.com/RakanNimer/tweet-dom-creator/issues"
   },
-  "homepage": "https://github.com/RakanNimer/TweetStyle",
+  "homepage": "https://github.com/RakanNimer/tweet-dom-creator",
   "devDependencies": {
     "browserify": "^9.0.8",
     "del": "^1.1.1",
