@@ -1,13 +1,14 @@
 {
   "name": "tweet-dom-creator",
   "description": "Convert JSON tweets to styled HTML",
-  "main": "lib/tweet-dom-creator.js",
+  "main": "lib/tweet-dom-creator.min.js",
+  "version": "0.0.4",
   "directories": {
     "example": "example"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/RakanNimer/TweetStyle"
+    "url": "https://github.com/RakanNimer/tweet-dom-creator"
   },
   "keywords": [
     "Tweet",
@@ -16,9 +17,12 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "hhttps://github.com/RakanNimer/TweetStyle/issues"
+    "url": "hhttps://github.com/RakanNimer/tweet-dom-creator/issues"
   },
-  "homepage": "https://github.com/RakanNimer/TweetStyle",
+  "homepage": "https://github.com/RakanNimer/tweet-dom-creator",
+  "dependencies": {
+    "html-linkify": "^1.2.0"
+  },
   "devDependencies": {
     "browserify": "^9.0.8",
     "del": "^1.1.1",
@@ -29,12 +33,7 @@
     "gulp-rename": "^1.2.0",
     "gulp-streamify": "0.0.5",
     "gulp-uglify": "^1.0.2",
-    "jquery": "^2.1.3",
     "stringify": "^3.1.0",
-    "underscore": "^1.8.3",
     "vinyl-source-stream": "^1.1.0"
-  },
-  "dependencies": {
-    "html-linkify": "^1.2.0"
   }
 }

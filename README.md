@@ -1,22 +1,13 @@
 ### Description
 
 
-npm module to programmatically convert a tweet from JSON to styled HTML that can be used with node or on the browser.
-
-### Installation 
+npm module to programmatically convert a tweet from JSON to styled HTML for the browser.
 
 
-```
-npm install --save-dev tweet-dom-creator
-```
-```
-gulp build
-```
 
 ### Usage
 ```javascript
-var tweetDomCreator = require('tweet-dom-creator');
-
+var tweetDomCreator = require('./tweet-dom-creator.js');
 //
 // Create a Dom Element from a tweet in JSON format
 //
@@ -27,6 +18,7 @@ var tweetHTML = tweetDomCreator.createNode(tweet);
 //
 tweetDomCreator.appendToNode(tweet,'body');
 ```
+
 
 ### Example
 The example folder contains an example with a sample_tweet

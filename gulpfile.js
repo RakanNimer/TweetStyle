@@ -12,7 +12,7 @@ var stringify = require('stringify');
 
 // Lint Task
 gulp.task('lint', function() {
-  return gulp.src('lib/sweet-alert.js')
+  return gulp.src('lib/tweet-dom-creator.js')
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
@@ -46,10 +46,8 @@ gulp.task('scripts', function() {
     .pipe(source('example.min.js'))
     .pipe(streamify(uglify()))
     .pipe(gulp.dest('./example/'));
-});
 
-// Watch Files For Changes
-gulp.task('watch', function() {
+
   gulp.watch('example/example.js', ['lint', 'scripts']);
   gulp.watch('lib/tweet-dom-creator.js', ['scripts']);
   gulp.watch(['lib/tweet-dom-creator.css'], ['css']);
