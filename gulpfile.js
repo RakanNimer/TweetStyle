@@ -21,7 +21,6 @@ gulp.task('lint', function() {
 gulp.task('css', function() {
 
   gulp.src('example/example.css')
-    .pipe(sass())
     .pipe(rename('example.css'))
     .pipe(gulp.dest('example'));
 
@@ -37,6 +36,7 @@ gulp.task('scripts', function() {
     .transform(stringify(['.html']))
     .bundle()
     .pipe(source('tweet-dom-creator.min.js'))
+    .pipe(streamify(uglify()))
     .pipe(gulp.dest('./lib/'));
   
 
@@ -44,15 +44,16 @@ gulp.task('scripts', function() {
     .transform(stringify(['.html']))
     .bundle()
     .pipe(source('example.min.js'))
+    .pipe(streamify(uglify()))
     .pipe(gulp.dest('./example/'));
 });
 
 // Watch Files For Changes
 gulp.task('watch', function() {
-  gulp.watch('example/*', ['lint', 'scripts']);
-  gulp.watch('lib/*', ['lint', 'scripts']);
-  gulp.watch(['lib/*.scss', 'lib/*.css'], ['sass']);
+  gulp.watch('example/example.js', ['lint', 'scripts']);
+  gulp.watch('lib/tweet-dom-creator.js', ['scripts']);
+  gulp.watch(['lib/tweet-dom-creator.css'], ['css']);
 });
 
 // Default Task
-gulp.task('build', ['lint', 'sass', 'scripts', 'watch']);
+gulp.task('build', ['lint', 'css', 'scripts']);
